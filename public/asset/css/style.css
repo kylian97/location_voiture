@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    background-color: #eff3f5 !important
+}
+
+/* NAV */
+
+.fa-solid.fa-bars {
+    font-size: 28px;
+    color: #ffffff;
+}
+#responsive-menu {
+    background:#384781;
+    padding:10px 5px;
+}
+#responsive-menu-list {
+    display:block;
+}
+.menu-item {
+    display:inline-block;
+    padding: 0px 15px;
+}
+.menu-item a {
+    color:#FFF;
+    text-decoration:none;
+}
+    
+#menu-expand-collapse{
+    display:none;
+    cursor:pointer;
+}
+
+@media screen and (max-width: 600px) {
+    #responsive-menu-list {
+        display:none;
+        width: 100%;
+    }
+    .menu-item { 
+        padding: 20px 5px;
+        border-right: #ccc 1px none;
+        display: block;
+        display: flex;
+        justify-content: center;
+    }
+    #menu-expand-collapse{
+        display:block;
+        text-align:right;
+    }
+}
+
+section.home{
+    height:100vh;
+    background-color: #eff3f5;
+    margin: 2rem 0;
+}
+
+.container_home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart {
+    background-color: #ffffff;
+    width:400px;
+    height: 300px;
+    border-radius: 8px;
+    margin: 0 20px;
+}
+
+.container_image{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.container_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.container_description {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0 10px;
+    height: 20%;
+
+}
+
+#voiture {
+    display:flex;
+    color: #384781;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+
+}
+
+.marque {
+    margin-right: 5px;
+}
+#caracteristique{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    margin: 0.5rem 0;
+
+}
+#caracteristique p {
+    font-size:13px;
+    opacity: 0.7;
+}
+.container_tarif {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 15%;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.prix {
+
+    background: #384781;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.learn_more{
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 2px solid #384781;
+}
+.learn_more a {
+text-decoration: none;
+color:#384781;
+}
+
+.card-body-modif{
+    width:100%;
+}
+
+
+/*************** SHOWROOM VOITURE ******************/
+
+.container_image_header{
+
+    width:100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section.showroom{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin:2rem  4rem;
+    gap: 4rem;
+}
+
+#container_caracteristique,
+#container_louer_voiture{
+
+    border: 1px solid #cacaca;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 15px 30px;
+}
+#container_louer_voiture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.voiture_caracteristique {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.option_vehicule { 
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+}
+
+.option_card{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 2rem;
+    flex-wrap: wrap;
+
+}
+
+.option{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+#titre_vehicule h2 {
+
+    color: #384781
+
+}
+
+@media (max-width: 820px){
+    .container_title{
+        margin: 0.8rem 0;
+    }
+    
+    section.showroom {
+        display: grid;
+        grid-template-columns: none;
+        gap: 4rem;
+    }
+    
+}
+

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+<section class="home">
+
+  <div class="container">
+
+    <div class="row">
+
+
+
+      {% for voiture in voiture %}
+
+
+      <div class="col-md-6"> {# colonne qui prend 6/12 #}
+        <div class="card produit mb-4 product-wap"> {# globalité de la carte #}
+          <div class="card"> {# haut de la carte #}
+            <div class="container-card-img">
+              <img class="card-img img-fluid" src="uploads/{{voiture.image}}"
+                alt="{{voiture.marque}} {{voiture.modele}}" loading="lazy"> {# image du produit #}
+            </div>
+
+
+            <div class="card-body-modif"> {# bas de carte #}
+
+              <div class="container_description">
+
+                <div id="voiture">
+                  <p class="marque"> {{voiture.marque}}</p>
+                  <p class="modele"> {{voiture.modele}} </p>
+                </div>
+
+
+                <div id="caracteristique">
+
+                  <div class="option">
+                    <i class="fa-solid fa-horse"></i>
+                    <p class="siege"> {{voiture.chevaux}} chevaux</p>
+                  </div>
+
+                  <div class="option">
+                    <i class="fa-solid fa-chair"></i>
+                    <p class="siege"> {{voiture.nombreSiege}} siège</p>
+                  </div>
+
+                 
+                 <div class="option">
+                   <i class="fa-solid fa-gears"></i>
+                   <p class="boite_vitesse">{{voiture.boiteVitesse}}</p>
+                 </div>
+
+                  <div class="option">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <p class="moteur">{{voiture.essence}}</p>
+                  </div>
+                  
+                </div>
+
+              </div>
+
+              <div class="container_tarif">
+                <div class="prix">
+                  {{(voiture.tarif / 100)|number_format(2, ',', '.') }} €
+                </div>
+                <div class="learn_more">
+                  <a href="{{path('app_voiture', {'slug' : voiture.slug })}}">
+                    En savoir plus
+                  </a>
+                </div>
+              </div>
+            </div> {#FIN CARD#}
+          </div> {# fin bas de carte #}
+        </div> {#fin globalité carte #}
+      </div> {# fin colonne #}
+
+      {% endfor %}
+    </div>
+
+
+  </div>
+
+</section>
+
+{% endblock %}
