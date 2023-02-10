@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ShowroomVoitureController!{% endblock %}
+{% block title %}{{voiture.marque}} {{voiture.modele}} {% endblock %}
 
 {% block content %}
 
@@ -8,17 +8,19 @@
 
     <header>
 
-     <div class="container_image_header">
-        <img src="uploads/{{voiture.image}}" alt="" width="100%">
-     </div>
-        
+        <div class="container_image_header">
+            <img src="uploads/{{voiture.image}}" alt="" width="100%">
+        </div>
+
     </header>
 
 </section>
 
 <section class="showroom">
     <div id="container_caracteristique">
-        <div id="titre_vehicule" ><h2>{{voiture.marque}} {{voiture.modele}}</h2> </div>
+        <div id="titre_vehicule">
+            <h2>{{voiture.marque}} {{voiture.modele}}</h2>
+        </div>
         <div class="voiture_caracteristique">
 
             <div class="container_title">
@@ -35,84 +37,89 @@
                     <i class="fa-solid fa-horse"></i>
                     <p class="siege">{{voiture.chevaux}} chevaux</p>
                 </div>
-                
+
                 <div class="option">
                     <i class="fa-solid fa-gears"></i>
                     <p class="boite_vitesse">{{voiture.boiteVitesse}}</p>
                 </div>
-                
+
                 <div class="option">
                     <i class="fa-solid fa-gas-pump"></i>
                     <p class="moteur">{{voiture.essence}}</p>
                 </div>
             </div>
-            
-            
-       </div>
+
+
+        </div>
 
         <div class="voiture_caracteristique">
 
             <div class="container_title">
                 <h3>Option du véhicule</h3>
             </div>
-    
-        <div class="option_card">
-        {% if voiture.siegeBebe != 0 %}
-            <div class="option">
-                <i class="fa-solid fa-baby-carriage"></i>
-                <p>Siege bébé</p>
-             </div>
-        {% endif %}
-              
-        {% if voiture.gps != 0 %}
-             <div class="option">
-              <i class="fa-solid fa-location-arrow"></i>
-              <p>GPS</p>
-             </div>
-        {% endif %}
-             
-        {% if voiture.lavageVehicule != 0 %}
-             <div class="option">
-                <i class="fa-solid fa-hand-sparkles"></i>
-              <p>Lavage véhicule</p>
-             </div>
-             {% endif %}
-        
-             
-        {% if voiture.conducteurAdditionnel != 0 %}
-             <div class="option" >
-                <i class="fa-solid fa-person"></i>
-                <p>Conducteur additionnel</p>
-             </div>
-             {% endif %}
-        
-        {% if voiture.Climatisation != 0 %}
-             <div class="option">
-                <i class="fa-solid fa-snowflake"></i>
-                <p>Climatisation</p>
-             </div>
-        {% endif %}
-            
-            
-       </div>
-    </div>
-             
 
-       </div>
-       
-    
-    
+            <div class="option_card">
+
+                {# (boléen) si l'option siège bébé est différent de 0 alors j'affiche l'option #}
+                {% if voiture.siegeBebe != 0 %}
+                <div class="option">
+                    <i class="fa-solid fa-baby-carriage"></i>
+                    <p>Siege bébé</p>
+                </div>
+                {% endif %}
+
+                {# (boléen) si l'option GPS est différent de 0 alors j'affiche l'option #}
+                {% if voiture.gps != 0 %}
+                <div class="option">
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <p>GPS</p>
+                </div>
+                {% endif %}
+
+                {# (boléen) si l'option lavage véhicule est différent de 0 alors j'affiche l'option #}
+
+                {% if voiture.lavageVehicule != 0 %}
+                <div class="option">
+                    <i class="fa-solid fa-hand-sparkles"></i>
+                    <p>Lavage véhicule</p>
+                </div>
+                {% endif %}
+
+                {# (boléen) si l'option conducteur additionnel est différent de 0 alors j'affiche l'option #}
+                {% if voiture.conducteurAdditionnel != 0 %}
+                <div class="option">
+                    <i class="fa-solid fa-person"></i>
+                    <p>Conducteur additionnel</p>
+                </div>
+                {% endif %}
+
+                {# (boléen) si l'option climatisation est différent de 0 alors j'affiche l'option #}
+                {% if voiture.Climatisation != 0 %}
+                <div class="option">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <p>Climatisation</p>
+                </div>
+                {% endif %}
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
     </div>
 
     <div id="container_louer_voiture">
-        
-           <h4>À partir de {{(voiture.tarif / 100)|number_format(2, ',', '.') }} € / J </h4> 
-    
-    
+
+        <h4>À partir de {{(voiture.tarif / 100)|number_format(2, ',', '.') }} € / J </h4>
     </div>
+
 </section>
 
-  
+
 
 
 

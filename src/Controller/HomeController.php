@@ -20,10 +20,11 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(): Response
     {
-
+        //je récupère avec entity manager tout mes produits en base de donnée avec findAll()
         $voiture = $this->entityManager->getRepository(Voiture::class)->findAll();
 
         return $this->render('home/index.html.twig', [
+            //j'envoie ma variable voiture a ma vue template
             'voiture' => $voiture
             
         ]);
@@ -33,12 +34,13 @@ class HomeController extends AbstractController
     public function show($slug): Response
     {  
           //slug
-        //récupère le slug du produit dans la base de donnée
+        //récupère le slug du véhicule dans la base de donnée
         $voiture = $this->entityManager->getRepository(Voiture::class)->findOneBySlug($slug);
 
         
 
         return $this->render('showroom_voiture/index.html.twig', [
+             //j'envoie ma variable voiture a ma vue template
             'voiture'=>$voiture,
         ]);
     }

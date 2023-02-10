@@ -10,10 +10,8 @@
 
     <div class="row">
 
-
-
+    {# je boucle pour récupérer chaque véhicule en base de donnée #}
       {% for voiture in voiture %}
-
 
       <div class="col-md-6"> {# colonne qui prend 6/12 #}
         <div class="card produit mb-4 product-wap"> {# globalité de la carte #}
@@ -29,7 +27,9 @@
               <div class="container_description">
 
                 <div id="voiture">
+                                       {# variable marque #}
                   <p class="marque"> {{voiture.marque}}</p>
+                                      {# variable modele #}
                   <p class="modele"> {{voiture.modele}} </p>
                 </div>
 
@@ -38,22 +38,26 @@
 
                   <div class="option">
                     <i class="fa-solid fa-horse"></i>
+                                        {# variable chevaux #}
                     <p class="siege"> {{voiture.chevaux}} chevaux</p>
                   </div>
 
                   <div class="option">
                     <i class="fa-solid fa-chair"></i>
+                                      {# variable siège #}
                     <p class="siege"> {{voiture.nombreSiege}} siège</p>
                   </div>
 
                  
                  <div class="option">
                    <i class="fa-solid fa-gears"></i>
+                                              {# variable boite de vitesse #}
                    <p class="boite_vitesse">{{voiture.boiteVitesse}}</p>
                  </div>
 
                   <div class="option">
                     <i class="fa-solid fa-gas-pump"></i>
+                                      {# variable essence #}
                     <p class="moteur">{{voiture.essence}}</p>
                   </div>
                   

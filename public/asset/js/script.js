@@ -1,6 +1,8 @@
 
 	$(document).ready(function(){
-		$("#menu-expand-collapse").click(function() {
-			$("#responsive-menu-list").toggle();
+		//quand je clique sur l'élément avec l'id  'menu-hamburger'
+		$("#menu-hamburger").click(function() {
+			//active et désactive l'élément avec l'id menu-liste 
+			$("#menu-liste").toggle();
 		});
 	});
