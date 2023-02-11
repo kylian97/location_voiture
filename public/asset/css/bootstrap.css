@@ -10440,3 +10440,12 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+@media (max-width:990px) {
+
+    .col-md-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+    
+}
